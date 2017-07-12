@@ -1,0 +1,75 @@
+= A M A Z O N == N O T E S =
+===================>
+== TUE 7.11.2017 ==>
+===================>
+- 2nd day
+  - setting up rallydev for issue tracking and task management
+    https://rally1.rallydev.com/slm/login.op
+  - ERC (Employment Resource Center)
+    https://inside.amazon.com/en/Employment/GettingHelpUS/Pages/default.aspx#amz_section04
+    - got Birth Certificate from my mom
+    - Finish I9 document now
+
+  - SAMSITE WIKI
+    https://w.amazon.com/index.php/Pyramid/Samsite
+
+  - SAMSITE BOARD (of retrospectives?)
+    https://board.amazon.com/board/group/samsite-team/18961
+
+  - I set up my own board:
+    https://board.amazon.com/board/35877
+
+  - VPN SETUP
+    https://w.amazon.com/index.php/Gemalto_Tokens
+    5 year battery, every token generation is recorded
+    User ID: Amazon alias from badge
+    PIN: 890p890p
+
+
+  - GET ORCA CARD:
+    https://inside.amazon.com/en/MyWorkplace/SeattleOfficeServices/Pages/orca-cards.aspx
+
+signature:
+    Kellan Nealy
+    206-349-2165
+    TRMS – samsite intern
+
+Pay and Money:
+  https://inside.amazon.com/en/Employment/GettingPaidUS/Pages/USManageMyPay.aspx
+  https://mypay.amazon.com (portal)
+
+Create ADP account to acces payroll from home?
+  https://netsecure.adp.com/pages/sms/ess/v2/pub/ssr/theme.faces?rtnURL=https://portal.adp.com&callingAppId=HomepagePortal
+  - Sounds like I need a registration code from my 'org administrator'
+
+Employee ID:
+  102268639
+
+- TOMORROW:
+  - visit doppler floor 7 (ERC) at 12:00
+  - TRMS charter - Doppler 05.302 & 05.303
+    Time: 4pm-5pm
+
+    - may be able to attend the SDE bootcamp tomorrow:
+      Location CONF US SEA Doppler 05.300
+      Duration 7/12/2017, 1:00 PM PST
+
+More VPN details:
+  Look for the Cisco AnyConnect client on your Laptop or Mac. Click connect to get to the actual login screen. Password is actually your passcode: PIN + Tokencode.
+    Once you have set your PIN, you will always use your Amazon username and passcode to authenticate. If for some reason after attempting your connection you are not successful, wait for the OTP tokencode to expire (the screen will go blank).
+    Do not write your username or PIN on your Gemalto token; the security of the system relies in part on the fact that someone who steals your token cannot use it to log in unless they also know your PIN.
+    If for some reason, after attempting your connection you are not successful, wait for the OTP token code to expire before attempting another connection.
+
+Connection troubleshooting
+  - I've set everything up, registered my token, and am entering my password with the OTP correctly, but it keeps prompting me to enter my login credentials when I try to log in. What is going on?
+    This issue comes from Cisco's AnyConnect client automatic certificate authentication. Follow these steps to resolve the issue easily.
+  - Open Cisco AnyConnect client and press connect. This should prompt you to enter your log in credentials. This step is necessary to load all settings, and if you've already pressed connect, you can skip it.
+  - Close this pop-up.
+  - Click the gear on the bottom left of the AnyConnect Client
+  - Under Preferences, toggle "Enable automatic certificate selection" so that it is not checked.
+  - Close preferences, and click connect. This should prompt a new window that asks you to select a certificate
+  - There can be more than one certificate with the same name as your username, so select the one that has the issuer listed as "Amazon Corporate Systems." This should resolve the issue.
+The Next Tokencode Prompt
+  On occasion, even after you type your passcode or tokencode correctly, the system prompts you to enter the next tokencode in order to confirm your possession of the token.
+  To authenticate in Next Tokencode: Wait until the tokencode changes, and then type the new one. Enter only the tokencode. Do not enter your PIN.
+  If you are not granted access after correctly entering the next tokencode, visit your local support team or open a trouble ticket.

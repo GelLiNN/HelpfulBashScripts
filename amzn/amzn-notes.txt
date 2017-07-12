@@ -89,3 +89,87 @@ Things:
     - may be able to attend the SDE bootcamp tomorrow:
         Location CONF US SEA Doppler 05.300
         Duration 7/12/2017, 1:00 PM PST
+
+===================>
+== WED 7.12.2017 ==>
+===================>
+8:30 Samsite sprint meeting:
+    T-Rex: Desktop App, search and replace application for tokens
+        SDRs downloaded in a secure room here at Amazon.
+        Investigators use it to get tokens, gives them to infosec to deserialize the tokens
+        Upload reports to federal level?
+        workflow:
+            select ZIP file on your local machine
+            T-Rex will parse all the bank account tokens
+            tokens are linked to the payment instrument
+
+        Future: no plain text entry for bank account tokens
+
+    Noir:
+        Sai was trying to optimize load time
+            Filing overview page loaded all the time (how does he know?)
+                He found out from customer feedback not data mining
+            Sometimes it would infinitely load
+            Turned async with parallel requests instead of procedural
+            Going to add relations tab to the page
+        Does that mean INVESTIGATORS can access any seller bank account they want?
+        Account information page also optimized.
+        KYC widget also optimized
+
+    Investigators are our customers?
+
+    SIV (seller identity verification) onboarding with new features:
+        flexibility of changing requirements for SIV
+        Related Items optimized for less related items
+        Account information added to SIV case
+        Supports 'person' entity and ALSO 'business' entity
+
+        New tab will be added "SIV widget"
+        apparently these investigators can download any of the seller identity documents the want?
+
+    Search Re-Indexing (for cases and case indexes):
+        Dynamo DB issue
+        used to be 40 minutes to run
+        target specific case types
+        finding mismatches in the DB
+        20,000 cases takes 4-5 minutes
+        PWA cases support?
+        Alexandria: https://w.amazon.com/index.php/Alexandria
+
+    What does APE stand for?
+
+Booking conference room:
+    meetings.amazon.com
+    either a room is taken or it's not
+
+10:00 sprint planning:
+    rallydev is the board we use for samsite
+    other teams use board.amazon.com usually
+    donuts!!!! Planning with points and actually allocating resources!
+    - I get 25% of Neo's bandwidth for rampup this week
+    - integration tests need to be added
+    - customer in the sprint planning meeting?  no way
+    - SIV onboarding changes went in this morning
+    - Fuego beta UAT support
+    - new story for prod readiness, switch that turns it on and off
+    - Sprint planning 07.12.2017 etherpad:
+        http://samsite-etherpad.aka.corp.amazon.com/p/Sprint_meeting_Jul_12
+    - What is bulk ingestion?
+    - Estimates need to be done today
+    - This girl is freaking the hell out - who is she
+    - SIV will get account actions working.  Displaying properly
+    - SOPN documentation story added
+
+Downloading IntelliJ, homebrew, Java 8 JDK
+Homebrew:
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    docs: http://docs.brew.sh
+    update with 'brew update'
+    Java 8 JDK: 'brew cask install java'
+Enabling Developer Mode on my mac:
+    DevToolsSecurity -enable
+
+SDE Bootcamp secured for today (YAY):
+    Walk down westlake all the way to 7th.
+    Location CONF US SEA Doppler 05.300
+    Duration 7/12/2017, 1:00 PM PST

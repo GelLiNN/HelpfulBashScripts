@@ -1,2 +1,5 @@
-# HelpfulBashScripts
-Repo for storing bash scripts for reference
+# Helpful Bash Scripts
+This repository is for storing scripts for reference.
+## Other Technical Notes
+Also contained within the depths are technical notes.
+### Tech A-La-Carte

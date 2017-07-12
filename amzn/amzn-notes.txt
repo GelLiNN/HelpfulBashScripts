@@ -45,15 +45,6 @@ Create ADP account to acces payroll from home?
 Employee ID:
   102268639
 
-- TOMORROW:
-  - visit doppler floor 7 (ERC) at 12:00
-  - TRMS charter - Doppler 05.302 & 05.303
-    Time: 4pm-5pm
-
-    - may be able to attend the SDE bootcamp tomorrow:
-      Location CONF US SEA Doppler 05.300
-      Duration 7/12/2017, 1:00 PM PST
-
 More VPN details:
   Look for the Cisco AnyConnect client on your Laptop or Mac. Click connect to get to the actual login screen. Password is actually your passcode: PIN + Tokencode.
     Once you have set your PIN, you will always use your Amazon username and passcode to authenticate. If for some reason after attempting your connection you are not successful, wait for the OTP tokencode to expire (the screen will go blank).
@@ -73,3 +64,28 @@ The Next Tokencode Prompt
   On occasion, even after you type your passcode or tokencode correctly, the system prompts you to enter the next tokencode in order to confirm your possession of the token.
   To authenticate in Next Tokencode: Wait until the tokencode changes, and then type the new one. Enter only the tokencode. Do not enter your PIN.
   If you are not granted access after correctly entering the next tokencode, visit your local support team or open a trouble ticket.
+
+Kellan's board of things to do:
+    https://board.amazon.com/board/35877
+
+Version Control:
+    https://code.amazon.com/packages/NoirWebsite/trees/mainline
+    - Activiy won't go on github.com at all.
+    - I'll have to try to get at least 3 days a week of github activity
+    - Code Review happens at cr.amazon.com
+
+Things:
+    Noir: investigations types, dark, "steam-punky"
+    Samsite: seems like mostly test related packages
+    PRISM:
+    Pyramid:
+    TRMS packages: https://code.amazon.com/packages/search?term=trms
+
+
+- TOMORROW:
+    - visit doppler floor 7 (ERC) at 12:00
+    - TRMS charter - Doppler 05.302 & 05.303
+      Time: 4pm-5pm
+    - may be able to attend the SDE bootcamp tomorrow:
+        Location CONF US SEA Doppler 05.300
+        Duration 7/12/2017, 1:00 PM PST

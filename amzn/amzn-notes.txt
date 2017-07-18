@@ -173,3 +173,355 @@ SDE Bootcamp secured for today (YAY):
     Walk down westlake all the way to 7th.
     Location CONF US SEA Doppler 05.300
     Duration 7/12/2017, 1:00 PM PST
+
+tokens.amazon.com says "Your smart card device has been successfully resynchronized."
+we shall see... lol
+
+=====================>
+== THURS 7.13.2017 ==>
+=====================>
+- My VPN anyconnect connection WORKS
+    select Seattle WA, US
+    type in usrnm/pass for machine
+    select Orca-AmazonMacs
+        username: amazon alias
+        pass: VPN-PIN + gemalto code
+
+- Picnic!!
+    https://inside.amazon.com/en/MyWorkplace/SeattleEvents/SeattleCompanypicnic/Pages/default.aspx
+    Babitha says: "I am sure that if you email them and say that you joined after the registration closed, they'll let you join the fun:)"
+
+- Legislation that applies to PYRAMID
+    the Criminal Justice (Money Laundering and Terrorist Financing) Act 2010
+
+- Bootcamp notes:
+    Java is the biggest by far at Amazon
+    Every package is unique and case sensitive
+    VERSION SET: snapshot of your dependencies at one time
+    The LIVE Version Set is special because it's the prod set of dependencies for a package
+        Merge from live to update your package with new version sets of your package's dependencies.
+    BINDLES:
+        Bindles is a system that manages ownership and permissions for software applications. We support AAA and Apollo Environments now, and will support resources like hostclasses, packages and Pipelines later this year.
+
+    BRAZIL:
+        Capital C config file, unrelated to version set
+
+    build.amazon.com:
+        where you build your package.
+        If one of the dependencies in your VS is not building,
+        The live build of your package will not update that part of the version
+        https://build.amazon.com/1668199524
+        Building of candycane, can build from desired commit which is nice!
+
+    TODO:
+        - create package with octance
+        - w.amazon.com/index.php/BT101_Building_Your_Service
+        - Candycane repo: https://code.amazon.com/packages/Shortswan_Candycane_ES2/trees/mainline
+
+    Created Cloud Developer Desktop:
+        https://w.amazon.com/index.php/CloudDeveloperDesktop/UserGuide/Setup#Create_a_child_hostclass_of_DEV-DSK
+        https://apollo.amazon.com/environments/DevDesktop/knnealy
+        DEV-DSK-KNNEALY
+        Added Posix "builder" System account permissions through Apollo
+        Added edit and deploy perms for knnealy "person" account through Apollo
+        Enable and use Apollo Cloud Control (ACC) to create an autoscaling group
+        - Used Fleet Management Console to give my dev environment some resources
+            https://fleet-management-console.amazon.com/vpc_ec2/requests/628815
+            It's called a MAWS request
+            Move the slider after MAWS requests to give the requested instances to your DevDesktop
+        - Stuck here setting decired instances:
+            https://apollo.amazon.com/r/environments/DevDesktop/knnealy/stages/Prod/capacity
+
+    New Octane Package:
+        https://octane.amazon.com/info/Shortswan_Candycane_ES2
+        Typical build system is 'happytrails'
+            Java, Maven, Gradle native support
+        Every package has a version set, and a live version set.
+
+    First commit:
+        https://code.amazon.com/packages/Shortswan_Candycane_ES2/commits/f844ae01d9dd1a75c5e04088391d651a8252744f
+
+
+    Typical release stages:
+        Env/knnealy/Alpha -> Env/Beta -> Env/Gamma -> Env/Prod
+        https://w.amazon.com/index.php/BT101_Creating_Your_Service_Environment
+
+    Test Driven Development (TDD)
+        (Think of some new feature change)
+        - make sure tests pass and functionality is good before making ANY CHANGES
+        - write tests that test the new functionality before you have built it
+        - tests fail
+        - write the new feature until your tests pass!
+
+    Useful command:
+        'brazil build server'
+        There are tools that can sync up your code with your linux cloud desktop
+        After you've made cr using the 'cr' command
+        NoMachine to view your remote desktop
+            good for watching Selenium Tests
+
+
+    Samsite notes:
+        Keymaster:
+            data custodian and typically used to move red data between services in a compliant way
+        Noir features:
+            https://drive.corp.amazon.com/folders/PRISM/Samsite/Noir/Feature%20Overview
+            Account Actions
+            Annotations
+            Case Close
+            Case Deescalations
+            Case Escalations
+            Cases
+            General Documents
+            Information Widgets
+            Queues
+            SAM process
+            SDU - Secure Document Upload and Download
+        Noir Case Types (these are actually queue types, and they stand for the name of an investigation):
+            IDVIND -
+            DPS -
+            TIN -
+        Noir splash site:
+            https://noir-na.amazon.com/
+            snowfort on wiki
+
+    Workflow:
+        Make sure you have a conventional workspace in your package:
+            https://w.amazon.com/index.php/BT101_Making_a_Code_Change#Creating_a_workspace
+        'brazil-build release' for local build
+        - Make changes, add features, tests, whatever
+        - run unit tests: 'brazil-build test'
+        - make commit
+        - run 'brazil-build server' for build
+        - run 'cr'
+        - click SHIP IT button from cr UI
+
+    Automate with Pipelines:
+        https://w.amazon.com/index.php/BT101_Automate_with_Pipelines
+
+    When you're logging, running codesearch on your errors when you get errors
+        can really help you paint a picture of what's going on.
+
+    Nebula Wiki (Read this tonight and take notes):
+        https://w.amazon.com/index.php/Nebula
+
+    NinjaDevSync:
+        - sync your local mac environment with your dev cloud environment
+
+    - Downloaded Pycharm, Python
+    - Download NodeJS and NPM
+        node v6.11.1
+        npm v3.10.10
+
+    - https://fleet-management-console.amazon.com/vpc_ec2/requests/629380
+        - new request for hardware (m4.2xlarge this time)
+
+===================>
+== FRI 7.14.2017 ==>
+===================>
+DynamoDB:
+    the only database software we use on Samsite
+    Different instances for noir-eu and noir-na etc
+
+Dev Desktop:
+    activated and deployed!
+    https://apollo.amazon.com/r/environments/DevDesktop/knnealy/stages/Prod/capacity
+    Nuked the old auto-scaling group and made a new one with 1 M4.2Xlarge instance
+    next step:
+        - create DNS alias
+
+RubyMine: setup with trial version
+
+KNET training transcript:
+    https://knet.csod.com/phnx/driver.aspx?routename=Social/UniversalProfile/Transcript&TargetUser=2194747
+
+Friday learning series in Arizona bldg:
+    - Reactive Microservices Architecture
+
+    Architecture Principles:
+        Domain-Driven-Design: standard for REST APIs.
+            Api should be centered around domain objects (i.e. bank account)
+            Write operations (commands):
+                - open
+                - close
+                - debit
+                - credit
+            Read Operations (queries): access information with given params (IDs etc)
+        Event Sourcing:
+            2-col table (event #, event description)
+            Save snapshots of event log for perf optimization
+            Optimistic Locking:
+                2 events try to happen at the same time, one fails one succeeds
+        CQRS: can have different shemas for writes and reads
+            writes and reads are in 2 separate storage containers
+            You can even change the DB further for different queries
+            Does this technique work with noSQL (in addition to RDBMS)?
+                Yes and it is even more helpful for perf
+        External Service Notifications:
+            Event Store from above writes directly to an event stream, which actively
+            sends everything to async event processors (also internal to the reactive microservice)
+
+        Transactions and Transfers (ACID compliance)
+            This is really slow and requires annoying processes (the transfer workflow)
+            You can wrap this whole workflow in an async process that always exposes the state of the transfer:
+                Stuck
+                Success
+                Escrow
+                Etc
+
+        Idempotency works well because it separates out the operations
+            to run well in an event-driven architecture
+
+        Reactive Microservices on AWS:
+            - DynamoDB works really well as an event store:
+                hash key (using Dynamo best practices) as the event ID
+                DynamoDB writes to a DDB Stream
+                AWS lambda good at consuming events from the stream
+                AWS lambda publishes to Simple Notification Service (SNS)
+                used kinesis (fan-out) stream to give 5 separate consumers access to the stream
+            - Use CloudFormation Templates
+                comes highly recommended
+            - Make backups of your event store!
+            - Backfill can Help
+                For each item in the table, DynamoDB determines which set of attributes to write to the index based on its projection (KEYS_ONLY, INCLUDE, or ALL). It then writes these attributes to the index. During the backfill phase, DynamoDB keeps track of items that are being added, deleted, or updated in the table. The attributes from these items are also added, deleted, or updated in the index as appropriate.
+                During the backfilling phase, the IndexStatus attribute is CREATING and the Backfilling attribute is true. Use the DescribeTable operation to retrieve the status of a table and all of its secondary indexes.
+                While the index is backfilling, you cannot delete its parent table. However, you can still modify the provisioned throughput of the table and any of its global secondary indexes.
+            - Elastic Search can also be good at reading the event store
+                Using an ES cluster can be really helpful in debugging a fleet of AWS microservices.
+
+    Expense Reporting:
+        https://ofa.fin.amazon.com/OA_HTML/OA.jsp?OASF=OIEHOMEPAGE&page=/oracle/apps/ap/oie/webui/HomePG&OAPB=OIE_ENTRY_BRAND&_ti=196911178&oapc=12&OAMC=1000678_27_0&menu=Y&oaMenuLevel=2&oas=0I7gAVKsl_xGptmVOFsneQ..
+        Adding my bank account here
+        Concur is somehow involved
+
+Dev-dsk work:
+    https://w.amazon.com/index.php/CloudDeveloperDesktop/UserGuide/Setup#Set_up_a_DNS_alias_-_Recommended
+    - M4.2xlarge is now active!
+    - DNS alias:
+        - need yubikey for midway
+        - midway won't authenticate even though I already changed my LDAP creds
+        Note: If you are a new hire and cannot login to Midway with invalid credentials error, it's possible your initial temporary password is expired. You'll need to change your password at https://password.amazon.com and wait for the change to propagate.
+        - created access role (???)
+            https://access.amazon.com/gwt#/roles/create
+    - Set recommended deployment preference set
+        https://apollo.amazon.com/r/environments/DevDesktop/knnealy/stages/Prod/deployment_preference_set
+    - ssh worked first try!
+        ssh knnealy@dev-dsk-knnealy-2b-08f9b5f4.us-west-2.amazon.com
+    - password is probably my old password (Babithaaaaaa!)
+        Ufd9X5wy
+        use passwd command from root to change after
+
+devcamp EC2 HOST:
+    ssh -i "devcamp.pem" ec2-user@ec2-52-15-59-247.us-east-2.compute.amazonaws.com
+    worked yesterday but I'm going to terminate....
+
+Neo 1v1 :
+    HERD workflow for bulk action -- look up on wiki
+    Noir Management Dashboard will be the focus of my project
+        Customer stories or feedback to start my doc?
+    Read this wiki:
+        https://w.amazon.com/index.php/Noir/Internal/Designs/Noir_Management_Dashboard
+    Permissions:
+        https://w.amazon.com/index.php/Noir/Internal/Operations/SOP
+
+    If I want to use NodeJS and javascript:
+        - convince the team by showing them how our codebase is and how it could be
+        - start with demo using nodeJS and demo using Ruby, compare/contrast
+            - open up the conversation
+
+Install ZSH
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+upgrade_oh_my_zsh
+
+===================>
+== MON 7.17.2017 ==>
+===================>
+- getting sudo privileges on my cloud dev env:
+    - created issue for not being able to auth with midway
+- DNS alias change through https://dns-manage-web.corp.proxy.amazon.com/
+    ssh knnealy.aka.corp.amazon.com
+- Set up cloud dev workplace:
+    sudo mkdir -p -m 755 /workplace/knnealy
+    sudo chown -R knnealy:amazon /workplace/knnealy
+
+You can then use brazil cli to create workspaces and packages in that folder.
+Below is an general example of how you one can accomplish this,
+but you should replace the arguments with the package and VersionSet you
+will be developing on. If you did not follow BT101 Making a code Change yet,
+this is the folder you will should be running the commands in.
+    cd /workplace/knnealy
+    brazil ws create --name MyWorkspace --vs MyVersionSet/name
+    cd MyWorkspace
+    brazil ws --use -p MyPackage
+- Follow this wiki to make a code change to an Amazon package
+    https://w.amazon.com/index.php/BT101_Making_a_Code_Change
+
+Stopping the server:
+    ps -ef | grep brazil-build
+    Find PID of the brazil-build start command and sudo kill that!!
+
+- Install Brazil CLI 2.0 (my Mac)
+    curl --negotiate -fLSsu: https://drive.corp.amazon.com/view/BrazilCLI-2.0/install-mac.sh -o /tmp/install-mac.sh && bash /tmp/install-mac.sh
+- Install the Amazon tap (one time setup)
+    brew tap amazon/amazon "ssh://git.amazon.com/pkg/HomebrewAmazon"
+- Install NinjaDevSync
+    brew install ninja-dev-sync
+- Update Brew + installed packages
+    brew update
+    brew upgrade
+
+After creating a workspace on your local machine with the brazil command (using BrazilCLI_2.0), you can add it to ninja-dev-sync with the -setup flag, like so:
+    $ ninja-dev-sync -setup
+The workspace does not have to exist on your remote machine; ninja-dev-sync will help you create it. Note that if it does exist, any changes that you haven't pushed will be obliterated.
+Once you've added a workspace, just run the program to start it up:
+    $ ninja-dev-sync
+ninja-dev-sync will automatically detect changes you make and synchronize them. When you add new packages to your workspace, ninja-dev-sync will run brazil commands on your remote machine automatically. If there was a problem, you'll see it in bright red/orange text. Usually this just means you need to run kinit on your remote machine.
+REMOVING:
+    $ ninja-dev-sync -remove /w/live
+    [...]
+    Removing link from /w/live/src to peddicor.aka.amazon.com:/w/live/src
+    Removed 1 workspace link(s)
+
+- Noir Management Dash
+    https://w.amazon.com/index.php/Noir/Internal/Designs/Noir_Management_Dashboard
+
+- Paper from Tobias
+    http://www.ey.com/Publication/vwLUAssets/AML_Transaction_Monitoring_A_Survey_of_UK_Financia.4/$FILE/1488612_AML_Transaction_Monitoring_A_Survey_of_UK_Financia.4%20(EMAIL).pdf
+
+good mech keyboard for office use:
+    https://www.amazon.com/Velocifire-Tenkeyless-Mechanical-Keyboard-Switches/dp/B01MS8YTYX/ref=sr_1_4?s=electronics&ie=UTF8&qid=1500316748&sr=1-4&keywords=quiet+mechanical+keyboard
+
+Samsite Notes:
+    ACS UK:
+    APE: Amazon Payments Europe
+            https://w.amazon.com/index.php/Noir/Internal/APE%20Design#Description_of_components
+    NoirWebsite: https://code.amazon.com/packages/NoirWebsite/trees/mainline
+    Development: https://w.amazon.com/index.php/PRISM/Internal/New%20Hire/Samsite/Noir%20Development
+    Urls:
+        beta: https://noir-na.integ.amazon.com
+        gamma: https://noir-na-gamma.amazon.com
+        prod: https://noir-na.amazon.com
+    Whenever create 1-click child, check stage (make sure beta), and set operational configs, check run-as user.
+    CLICK sync-with parent
+
+
+Ops meeting 1:00
+    COE (Correction of Errors) : https://w.amazon.com/index.php/COE
+    Handing off on-call Monday before standup (Kyle gets CC'd but he's on vacation)
+
+views files with id="kyc-resource-fetcher" class="async-resource-block"
+    https://code.amazon.com/packages/NoirWebsite/blobs/mainline/--/rails-root/app/views/cases/dvt/show/_kyc_verification_history.html.erb
+
+installed Ruby (2.4.0):
+    (need rvm) https://rvm.io/help
+    rails (5.1.2)
+    create first app: http://installrails.com/steps/create_your_first_app
+
+For html optimization:
+    add function in app/helpers/cases_helper.rb
+    function with these params:
+        https://w.amazon.com/index.php/Noir/Internal/Guides/Code/NoirWebsite#Options
+        1 required, 3 optionals
+    found 9 redundant instances using Code Search: https://code.amazon.com/search?term=async-resource-block
+    found 13 across 10 with Atom search
+    More info: https://w.amazon.com/index.php/Noir/Internal/Guides/Code/NoirWebsite#Parallel_Resource.2FAjax_View_Fetcher

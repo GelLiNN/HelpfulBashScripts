@@ -525,3 +525,57 @@ For html optimization:
     found 9 redundant instances using Code Search: https://code.amazon.com/search?term=async-resource-block
     found 13 across 10 with Atom search
     More info: https://w.amazon.com/index.php/Noir/Internal/Guides/Code/NoirWebsite#Parallel_Resource.2FAjax_View_Fetcher
+
+===================>
+== TUE 7.18.2017 ==>
+===================>
+- Should you receive a return offer, we need to ensure all your application information is accurate and up to date in order for you to receive proper offer documentation.  Therefore, our team will need you to complete an application in our new Candidate Portal.
+    Please note that you must complete this application by end of day Thursday, 7/20/2017.
+    As a current Amazon intern, you already have an account. The email address associated with your account is: knnealy@amazon.com
+Follow this link to the application: https://www.amazonuniversity.jobs/?JobId=557395
+
+- Security Cheatsheet for Amazon SDEs:
+    https://w.amazon.com/bin/view/SecU/NewSDESecurityCheatsheet2017/
+
+- Team board
+    https://rally1.rallydev.com/#/47403029690d/teamboard
+
+- Kill server on cloud dev desktop
+    fuser -k 8000/tcp
+        AND
+    ps -ef | grep brazil-build
+        CHECK ALL LISTENING PORTS
+    sudo lsof -i -P -n | grep LISTEN
+
+NoMachine remote desktop:
+    https://w.amazon.com/index.php/CloudDeveloperDesktop/UserGuide/GUI/NoMachine
+
+DEVDSK operating system:
+    4.4.20-0.1.fm.237.49.326.metal1.x86_64
+
+Free Corvette drawing results Jan 21st
+
+NoirWebsite optimization:
+    @str = "<b>Hi</b>"
+    <%= @str.html_safe %>
+
+    def print_arg(args = {})
+      if args.has_key?(:age)
+        puts args[:age]
+      end
+    end
+
+    s = "foo"
+    s << "bar"
+    #=> "foobar"
+
+    TUT:
+        https://www.youtube.com/watch?v=GY7Ps8fqGdc
+
+===================>
+== WED 7.19.2017 ==>
+===================>
+- COMPLETE CUSTOMER OBSESSION POST-FEEDBACK ON KNET to get phonetool icon
+- Complete Job app TONIGHT
+- Complete customer and law compliance training within 30 days
+- Complete ticket for view optimization

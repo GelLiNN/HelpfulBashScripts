@@ -541,7 +541,7 @@ Follow this link to the application: https://www.amazonuniversity.jobs/?JobId=55
     https://rally1.rallydev.com/#/47403029690d/teamboard
 
 - Kill server on cloud dev desktop
-    fuser -k 8000/tcp
+    fuser -k 3000/tcp
         AND
     ps -ef | grep brazil-build
         CHECK ALL LISTENING PORTS
@@ -579,3 +579,98 @@ NoirWebsite optimization:
 - Complete Job app TONIGHT
 - Complete customer and law compliance training within 30 days
 - Complete ticket for view optimization
+
+Rails unit test help:
+    https://relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    HTML output tests
+        http://www.rubydoc.info/github/kucaahbe/rspec-html-matchers/RSpec%2FHtmlMatchers%3Ahave_tag
+
+====================>
+== THUR 7.20.2017 ==>
+====================>
+- FINISH job application -- DONE
+    https://www.amazonuniversity.jobs/dashboard
+- CR out https://cr.amazon.com/r/7433870/
+- rubocop failed on my unit test:
+    prefers single quotes
+    curly braces are redundant for one option in the hash
+- no meetings today!!
+
+- CREATE STORIES:
+    - CM Dashboard Design feature set
+    - CM Dashboard engineering requirements doc (amazon equivalent)
+    - CM Dashboard dependency selection (if any) for visualizations
+    - CM Dashboard integration with other internal services
+        Uma's case history: https://w.amazon.com/index.php/Noir/Internal/Designs/Case_History
+        Audit Logging: https://w.amazon.com/index.php/Noir/Internal/Designs/AuditLoggingSolution
+    - CM Dashboard create mock ups
+
+Integration testing:
+https://w.amazon.com/index.php/PRISM/Internal/Guides/Development/Testing
+    Integration Testing against developer box
+    Visit - https://test-your-changes.corp.amazon.com/
+    Fill the form with following values:
+        End point (local server with changes)
+        NoirCaseManagementService - Your HTTP endpoint of your desktop with port number
+        NoirWebsite - Your HTTPS endpoint of your desktop with port number
+        Test suite name - NoirUITests / NoirServiceTests
+        VersionSet - NoirWebsite/development OR NoirCaseManagementService/mainline
+        Test target to be executed - run-all-tests
+        Test suite version - 1.0
+        Tod worker on which test will be executed TodWorker/SAM/NA/Beta (for service)
+        Additional parameter (mandatory): -Ddomain=beta -Drealm=<your realm in which you want to test USAmazon/EUAmazon>
+        Any additional parameter (optional field): -DresourceFolder=/apollo/env/NoirSeleniumNode/test-config/upload-files/
+        Alias to which test report will be mailed - your alias, your reviewer's OR team. Submit.
+    You will get a link to ToD run triggered by the site.
+    Please share that in your CR in order to get Ship It faster. Now, reviewers will have higher confidence with your check-in.
+    Targets for integ tests: https://code.amazon.com/packages/NoirUITests/blobs/mainline/--/build.xml
+
+    CASE PERMISSIONS:
+        https://noir-eu.integ.amazon.com/users/knnealy (MINE)
+        https://noir-eu.integ.amazon.com/users/wangweny (WEN'S)
+        I have to give myself perms to all the same queues
+
+
+Samsite notes:
+    Disposition can be set to “Filed”, “Not Filed”, “Duplicate", "False Positive", "Below the Threshold", “Not set”, etc. Each case only has one disposition but the investigators might want to filter cases that is either “Filed” or “Duplicate”. Therefore, a multiple-selection drop-down would be a good choice for the use case.
+    Acronyms I still don't know:
+        UAT - User Acceeptance Testing
+        SLA - Service Level Agreement
+        SOP - Standard Operating Procedure
+        KYC - Know Your Customer -- is a govt mandate, info including whether they are tax paying legal residents and whether they could potentially be terrorists
+
+My dev box endpoint:
+    https://knnealy.aka.corp.amazon.com:1081/cases/all
+    Activating 1081
+        sudo /apollo/bin/runCommand -e NoirWebsite -a Activate
+    brazil-build start gets it on 3000 (I think?)
+
+===================>
+== FRI 7.21.2017 ==>
+===================>
+- golden gardens intern outing
+    - too much stuff to finish up
+    - get that CR done today
+
+New ticket filed:
+    https://rally1.rallydev.com/#/47403029690d/detail/userstory/137177783996?fdp=true
+    based on my deep dive into our test infra
+
+attachment from my build:
+<div class="async-resource-block"
+    data-resource-path="/cases/bcac357e-a7be-40d4-9dcf-583956b97e24/attachments"
+    data-js-resource-to-init="attachments"
+    data-auth-error="You do not have permission to download attachment(s). Contact your manager if you believe you should have permission for this action."
+    data-error-message="Error in fetching attachments! Try again.">
+    <span class="resource-error text-danger hide"></span>
+</div>
+
+Samsite case queues and case-types:
+    https://w.amazon.com/index.php/Noir/Internal/Operations/SOP/Access%20Control#NA_Case
+
+This afternoon:
+    Finish adding all the different test targets to my integ pipeline
+    Finish giving myself queue permissions to everything while I'm admin
+    Create Noir Management Dashboard stories
+    Set up NoMachine and ninja-dev-sync
+    Create design doc?

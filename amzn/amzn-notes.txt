@@ -673,4 +673,84 @@ This afternoon:
     Finish giving myself queue permissions to everything while I'm admin
     Create Noir Management Dashboard stories
     Set up NoMachine and ninja-dev-sync
-    Create design doc?
+    Create design doc? link to it already in https://w.amazon.com/index.php/Noir/Internal/Designs/Noir_Management_Dashboard
+
+Invictus 6.400
+"Globemaster: Journey to Cross Region Replication"
+bryanluo@amazon.com from cupertino
+NOTES:
+    Why do we need cross-region data replication?
+        - availability (IAD and DynamoDB regional outages)
+        - latency is better if the source is closer to customer
+    Who is asking for this infrastructure change?
+        Retail
+        AmazonPay
+        Amazon Video
+        Enterprise AWS customers
+    Challenges?
+        Latency vs. consistency : we can have fast but inconsistent relication or vice-versa
+            i.e. if you waited until the replication finished across all regions
+        Simultaneous replicator updates:
+            timestamp gets skewed, among other problems:
+            Solution: Logical Clock:
+                region specific version ID that maps to what time requested updates come in
+                i.e. if the vector clocks of each storage bin is opposite
+                    there are other cases
+        Bootstrapping and configuration:
+            if modifications to the storage come in while it's copying
+            the replicator must hold onto these requests and wait until the
+            copying (or bootstrapping) finishes.
+    Precogs:
+        - understand all your dependency and failure strategies
+        - have independent testing components, contrary to popular re-use development
+        - vector clock can also determine duplicates to avoid putting them in Dynamo
+
+    Infra:
+        DynamoDB and replicator in pairs, with cross-region communication handled by SQS and SNS
+        Kinesis sits in front of the master resource that's doing the checking and updating
+            DynamoDB is limited to 2 concurrent service streams and that's why kinesis is good
+        Using SNS and SQS means order can get mixed up
+            can be fixed by detecting using the vector clock, but there is still an edge case:
+                When client quickly removes and remakes a record the clock is restarted
+    Going slow will make you go faster in the long run
+
+    (W00t!) SNS and SQS automatically implement retries and cross-region possible failures
+
+    Supply chain becoming 1st pilot customer, with more onboarding in 2017.
+    CodeName is "GlobeMaster" for now, real feature name coming out when Prod release happens.
+
+FINISHED WITH PERMISSIONS!!! https://noir-eu.integ.amazon.com/users/knnealy
+Can I get a Ship It?? https://cr.amazon.com/r/7433870/
+
+===================>
+== MON 7.24.2017 ==>
+===================>
+Tests still failing?
+    TakeActionTests
+    KYCInformationTests
+    EditCaseV2Tests
+    CaseStatusUpdateTests
+    CaseOverviewV2Tests
+    CaseFilterTests
+    CaseEscalationTests
+    CaseCreationV2Tests
+    AttachmentTests
+
+Added 2 Stories to rallydev board for NCMD
+    Design Doc: https://rally1.rallydev.com/#/47403029690d/detail/userstory/137843944264?fdp=true
+    NCMD Mockups: https://rally1.rallydev.com/#/47403029690d/detail/userstory/137846610784?fdp=true
+
+Try running integ on mainline build :1081
+
+OPS MEETING 2.101 == [] [] []
+- Ivan will revamp the Noir Development wiki with git guidelines
+- COE (correction of errors):
+    - Incident Response Analysis: can detection be improved?
+    - Why can't we migrate away from older ruby versions
+        4 java dependencies that we need to get away from
+        RampActions and Weblab -- the last 2 Java dependencies
+        Getting to ruby 2.3
+
+- running attachment tests against mainline build on 1081
+- address CR from sai and lucas https://cr.amazon.com/r/7433870/
+    - don't call the path a default param.  It's req'd
